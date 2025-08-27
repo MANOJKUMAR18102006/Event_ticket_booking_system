@@ -29,14 +29,14 @@ Inheritance → User and Admin inherit from Person.
 Polymorphism → bookTicket() behaves differently for Normal vs VIP ticket booking.
 Encapsulation → Private data like password, booking ID secured with getters/setters.
 
-UML diagram
+UML diagram:
                   ┌────────────────────────────┐
-                  │        Person              │   
+                  │        Person (abstract)   │
                   ├────────────────────────────┤
-                  │  name : String            │
-                  │  email : String           │
+                  │ - name : String            │
+                  │ - email : String           │
                   ├────────────────────────────┤
-                  │ + showDetails() : void     │   
+                  │ + showDetails() : void     │ 
                   └─────────────▲──────────────┘
                                 │
            ┌────────────────────┴───────────────────┐
@@ -44,28 +44,29 @@ UML diagram
 ┌──────────────────────────┐            ┌───────────────────────────┐
 │         User             │            │          Admin            │
 ├──────────────────────────┤            ├───────────────────────────┤
-│ userId : int             │            │   adminId : int           │
+│ - userId : int           │            │ - adminId : int           │
 ├──────────────────────────┤            ├───────────────────────────┤
 │ + bookTicket(e: Event)   │            │ + addEvent(e: Event)      │
 │ + cancelTicket(id: int)  │            │ + removeEvent(id: int)    │
 │ + showDetails()          │            │ + showDetails()           │
 └───────────┬──────────────┘            └─────────────┬─────────────┘
             │                                         │
-            │                                         │ 
+            │                                     │ 
             │                                         │
             ▼                                         ▼
 ┌──────────────────────────┐            ┌───────────────────────────┐
 │         Ticket           │            │          Event            │
 ├──────────────────────────┤            ├───────────────────────────┤
-│   ticketId : int         │            │ - eventId : int           │
-│   userId : int           │            │ - title : String          │
-│   eventId : int          │            │ - totalSeats : int        │
-│   seatType : String      │            │ - availableSeats : int    │
+│ - ticketId : int         │            │ - eventId : int           │
+│ - userId : int           │            │ - title : String          │
+│ - eventId : int          │            │ - totalSeats : int        │
+│ - seatType : String      │            │ - availableSeats : int    │
 │                          │            │ - ticketPrice : double    │
 ├──────────────────────────┤            ├───────────────────────────┤
 │ + getTicketDetails()     │            │ + getAvailableSeats()     │
 │                          │            │ + setAvailableSeats(int)  │ (encapsulation)
 │                          │            │ + bookSeat()              │
 └──────────────────────────┘            └───────────────────────────┘
+
 
 
