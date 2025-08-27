@@ -30,6 +30,8 @@ Polymorphism → bookTicket() behaves differently for Normal vs VIP ticket booki
 Encapsulation → Private data like password, booking ID secured with getters/setters.
 
 UML diagram:
+
+
                   ┌────────────────────────────┐
                   │        Person (abstract)   │
                   ├────────────────────────────┤
